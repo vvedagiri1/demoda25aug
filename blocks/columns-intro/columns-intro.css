@@ -1,0 +1,105 @@
+/* columns-intro — 2-column intro: text + CTAs | stacked image grid.
+   Values extracted from source computed styles (see migration-work/columns-intro-extracted.css).
+   Section bg (#f5f5f5), 128px padding and 1200px container come from .section.secondary + styles.css. */
+
+/* Row layout — mobile first (stacked) */
+.columns-intro > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Heading */
+.columns-intro h1 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1.12px;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+/* Description paragraph */
+.columns-intro p {
+  margin: 24px 0 0;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  line-height: 28.8px;
+  color: var(--text-color);
+}
+
+/* Image column — 3 pictures in a 2-column grid inside a wrapping <p> */
+.columns-intro-img-col p {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+}
+
+.columns-intro-img-col picture {
+  display: block;
+}
+
+.columns-intro img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* CTA row — the paragraph that holds the two links */
+.columns-intro > div > div:first-child p:has(a) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+/* CTA links (bare <a>, two share one <p> so EDS does not add .button) */
+.columns-intro > div > div:first-child p a:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--text-color);
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* first CTA — filled */
+.columns-intro > div > div:first-child p a:any-link:first-child {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* second CTA — outline */
+.columns-intro > div > div:first-child p a:any-link:last-child {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.columns-intro > div > div:first-child p a:any-link:first-child:hover {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.columns-intro > div > div:first-child p a:any-link:last-child:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* Desktop — two equal columns */
+@media (width >= 900px) {
+  .columns-intro > div {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+}

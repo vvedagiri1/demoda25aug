@@ -1,0 +1,35 @@
+/* columns-gallery — image gallery grid
+   Design values extracted from source computed styles:
+   4-column grid, 12px gap, 1:1 square cells, 20px border-radius, images object-fit cover */
+
+/* The single row is the grid container; each cell holds one image */
+.columns-gallery > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.columns-gallery > div > div {
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.columns-gallery > div > div picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.columns-gallery > div > div img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (width >= 900px) {
+  .columns-gallery > div {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
