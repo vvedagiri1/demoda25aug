@@ -1,0 +1,61 @@
+/* columns-story — 2-column featured story: cover image + heading/byline.
+   Values extracted from source computed styles. */
+
+.columns-story > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-story img {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* image column comes first on mobile */
+.columns-story > div > div {
+  order: 1;
+}
+
+.columns-story > div > .columns-story-img-col {
+  order: 0;
+}
+
+/* heading */
+.columns-story h2 {
+  margin: 0;
+  line-height: 44px;
+}
+
+/* byline metadata block — 14px, first line 16px below heading, 8px between lines */
+.columns-story > div > div:not(.columns-story-img-col) > p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  line-height: 1.4;
+}
+
+.columns-story > div > div:not(.columns-story-img-col) > p:first-of-type {
+  margin-top: 16px;
+}
+
+.columns-story > div > div:not(.columns-story-img-col) > p:not(:first-of-type) {
+  margin-top: 8px;
+  color: var(--link-color);
+}
+
+@media (width >= 900px) {
+  .columns-story > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .columns-story > div > div {
+    order: unset;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "demoda25aug": {
+      "previewOrg": "vvedagiri1",
+      "previewSite": "demoda25aug",
+      "contentHostUrl": "https://content.da.live/vvedagiri1/demoda25aug/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

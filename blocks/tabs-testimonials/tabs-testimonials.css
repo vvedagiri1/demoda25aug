@@ -1,0 +1,143 @@
+/* Block: tabs-testimonials — values extracted from source computed styles */
+
+.tabs-testimonials {
+  color: var(--text-color);
+}
+
+/* ---- Active panel (portrait + testimonial) ---- */
+.tabs-testimonials .tabs-testimonials-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-testimonials .tabs-testimonials-panel-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.tabs-testimonials .tabs-testimonials-panel-media {
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.tabs-testimonials .tabs-testimonials-panel-media picture {
+  display: block;
+}
+
+.tabs-testimonials .tabs-testimonials-panel-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tabs-testimonials .tabs-testimonials-panel-body p {
+  margin: 0 0 8px;
+  font-family: var(--body-font-family);
+  color: var(--text-color);
+}
+
+/* name */
+.tabs-testimonials .tabs-testimonials-panel-body p:first-child {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.tabs-testimonials .tabs-testimonials-panel-body p:first-child strong {
+  font-weight: 700;
+}
+
+/* role */
+.tabs-testimonials .tabs-testimonials-panel-body p:nth-child(2) {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.6px;
+}
+
+/* quote */
+.tabs-testimonials .tabs-testimonials-panel-body p:last-child {
+  margin: 16px 0 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+/* ---- Tab strip (below panel) ---- */
+.tabs-testimonials .tabs-testimonials-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.tabs-testimonials .tabs-testimonials-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid rgb(232 232 232);
+  border-radius: 16px;
+  background-color: rgb(239 239 239);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.tabs-testimonials .tabs-testimonials-avatar {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.tabs-testimonials .tabs-testimonials-avatar picture,
+.tabs-testimonials .tabs-testimonials-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tabs-testimonials .tabs-testimonials-tab-text {
+  display: block;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- separate scope from panel-body p rules above */
+.tabs-testimonials .tabs-testimonials-tab-text p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 22.4px;
+  color: var(--text-color);
+}
+
+.tabs-testimonials .tabs-testimonials-tab-text p:first-child strong {
+  font-weight: 700;
+}
+
+.tabs-testimonials .tabs-testimonials-tab-text p:last-child {
+  font-weight: 400;
+}
+
+/* selected tab — placed after tab-text rules to keep specificity non-descending */
+.tabs-testimonials .tabs-testimonials-tab[aria-selected='true'] {
+  border-color: var(--text-color);
+  background-color: var(--light-color);
+}
+
+/* ---- Desktop ---- */
+@media (width >= 900px) {
+  .tabs-testimonials .tabs-testimonials-panel-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tabs-testimonials .tabs-testimonials-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
